@@ -4,10 +4,11 @@
 name: Build and deploy container app to Azure Web App - tpi-desarrollo
 
 on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
+  workflow_run:
+    workflows:
+      - "General CI"
+    types:
+      - completed   
 
 jobs:
   build:
