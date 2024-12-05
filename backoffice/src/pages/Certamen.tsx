@@ -204,6 +204,18 @@ export default function Certamen() {
         }
     };
 
+    useEffect(() => {
+
+        fetchEventos();
+    }, []);
+
+
+
+    useEffect(() => {
+        if (certamen) {
+            fetch_escultores(certamen.id);
+        }
+    }, [certamen]);
 
     const table = useReactTable({
         data,
@@ -224,14 +236,6 @@ export default function Certamen() {
     const handleClosePopup = () => {
         setIsPopupOpen(false)
     };
-
-    useEffect(() => {
-        if (certamen) {
-            fetch_escultores(certamen.id);
-        }
-        fetchEventos();
-    }, []);
-
 
 
     return (
