@@ -13,7 +13,7 @@ import {
 
 import NuevaEsculturaPopup from "../components/crearEscultura";
 import EditarEsculturaPopup from "../components/editarEscultura";
-import { useParams } from "react-router-dom";
+import { useParams , useNavigate } from "react-router-dom";
 import { url } from "../utils";
 
 
@@ -49,6 +49,8 @@ function limitarPalabras(texto: string, max: number): string {
 
 export default function Esculturas() {
     const columnHelper = createColumnHelper<Escultura>();
+
+    const navigate = useNavigate();
     const columns = [
 
         columnHelper.accessor("nombre", {
@@ -76,7 +78,7 @@ export default function Esculturas() {
                 return (
                     <div className="acciones_container">
                         <button onClick={() => openEditPopup(props.row.original.id)}><i className="material-symbols-outlined">&#xe3c9;</i></button>
-                        <button onClick={() => console.log("")}><i className="material-symbols-outlined">&#xe8f4;</i></button>
+                        <button onClick={() => navigate(`/ver<->escultura/${props.row.original.id}`)}> <i className="material-symbols-outlined">&#xe8f4;</i></button>
                     </div>
                 );
             },
@@ -211,7 +213,7 @@ export default function Esculturas() {
                 <header className="header-section">
                     <h1 className="header-title">Perfil del escultor</h1>
                     <div className="buttons">
-                        <button className="btn cancelar" onClick={() => copiarQr(id)}>Copiar qr</button>
+                        <button className="btn cancelar" onClick={() => copiarQr(id)}>Copiar QR</button>
                         <button className="btn-principal" onClick={handleOpenPopup}>Agregar escultura</button>
                     </div>
 
@@ -227,7 +229,7 @@ export default function Esculturas() {
                 </header>
                 <div className="section-container">
                     <div className="contenedor-info-escultor">
-                        <div className="center">
+                        <div className="center-ver-escultor">
 
                             <div className="info">
                                 <div className="group"><h2>{escultor?.nombre}</h2>
