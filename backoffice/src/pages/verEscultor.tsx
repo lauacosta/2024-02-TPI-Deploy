@@ -78,7 +78,7 @@ export default function Esculturas() {
                 return (
                     <div className="acciones_container">
                         <button onClick={() => openEditPopup(props.row.original.id)}><i className="material-symbols-outlined">&#xe3c9;</i></button>
-                        <button onClick={() => navigate(`/ver<->escultura/${props.row.original.id}`)}> <i className="material-symbols-outlined">&#xe8f4;</i></button>
+                        <button onClick={() => navigate(`/ver-escultura/${props.row.original.id}`)}> <i className="material-symbols-outlined">&#xe8f4;</i></button>
                     </div>
                 );
             },
