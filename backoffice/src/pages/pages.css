@@ -133,7 +133,8 @@
 
 .center-ver-escultor{
   display: grid;
-  
+  align-items: center;
+  justify-content: left;
 }
 
 .contenedor-info-escultor .info p{
