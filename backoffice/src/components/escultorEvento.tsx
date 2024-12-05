@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./crearEscultor.css";
 import "dayjs/locale/es";
+import { url } from "../utils";
 
 interface NuevoEscultorPopupProps {
   isOpen: boolean;
@@ -25,7 +26,7 @@ export default function AgregarEscultorAevento({ isOpen, onClose, onNuevoEsculto
 
   });
   const [countries, setCountries] = useState<{ id: number; nombre: string }[]>([]);
-  const url = "http://localhost:8000/api";
+
   const [nuevoEscultor, setNuevoEscultor] = useState(false);
   const [escultores, setEscultores] = useState<Escultor[]>([]);
 
