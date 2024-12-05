@@ -6,7 +6,6 @@ import LoginAdmin from './pages/Login';
 import VerEscultura from './pages/verEscultura';
 import EditarEscultura from './pages/editarEscultura';
 import VerEvento from './pages/verEvento';
-import EditarEvento from './pages/editarEvento';
 import VerEscultor from './pages/verEscultor';
 import EditarEscultor from './pages/editarEscultura';
 import Certamen from './pages/Certamen';
@@ -23,8 +22,7 @@ function App() {
                 <Route path="/Certamen" element={<Certamen />} />
                 <Route path="/ver-escultura/:id" element={<VerEscultura />} />
                 <Route path="/editar-escultura/:id" element={<EditarEscultura />} />
-                <Route path="/ver-evento/:id" element={<VerEvento />} />
-                <Route path="/editar-evento/:id" element={<EditarEvento />} />
+                <Route path="/ver-evento/:id" element={<VerEvento />} />                
                 <Route path="/ver-escultor/:id" element={<VerEscultor />} />
                 <Route path="/editar-escultor/:id" element={<EditarEscultor />} />
             </Routes>
