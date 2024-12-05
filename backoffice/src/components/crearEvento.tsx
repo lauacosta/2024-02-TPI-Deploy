@@ -83,6 +83,7 @@ export default function NuevoEventoPopup({
         if (file) {
             fileContainer?.classList.add("activeFile")
             setFileName(file.name);
+            setEventData({ ...eventData, foto: file });
         }
     };
 
